@@ -3,9 +3,13 @@ import numpy as np
 
 
 def overlapadd(input, windowsz, hopsz, window):
+
+    #if all(window) == 1:
+    #    window = np.ones((windowsz,1))
+
     framenum = np.size(input, 1)
 
-    output = np.zeros(1, framenum * hopsz + windowsz)
+    output = np.zeros(((framenum) * hopsz + windowsz,))
 
     counter = 0
     while counter < framenum:
