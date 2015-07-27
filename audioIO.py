@@ -4,7 +4,7 @@
 
 BLOCK_TIME = 0.1                        # Size of input block in seconds
 RATE = 44100                            # Sampling rate in Hertz
-CHANNELS = 2                            # number of input channels
+CHANNELS = 1                            # number of input channels
 FRAME_PER_BLOCK = int(BLOCK_TIME*RATE)  # number of samples per block
 NORMALIZE_VALUE = 32768                 # 2^15 (assume pyaudio.paInt16)
 
