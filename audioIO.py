@@ -4,7 +4,7 @@
 
 BLOCK_TIME = 0.1                        # Size of input block in seconds
 RATE = 44100                            # Sampling rate in Hertz
-CHANNELS = 2                            # number of input channels
+CHANNELS = 1                            # number of input channels
 FRAME_PER_BLOCK = int(BLOCK_TIME*RATE)  # number of samples per block
 NORMALIZE_VALUE = 32768                 # 2^15 (assume pyaudio.paInt16)
 
@@ -14,6 +14,7 @@ import Queue
 import threading
 import time
 import wave
+import pylab as pl
 
 class AudioIN():
     
@@ -87,14 +88,17 @@ def main():
     a = AudioIN()
     a.start_stream()
     
-    for i in range(10):
+    for i in range(100):
         time.sleep(0.1)
 
     a.stop_stream()
     print "done stream"
     a.terminate()
 
-    print a.getData()
+    ab = a.getData()
+    pl.plot(ab)
+    pl.show()
+    #print a.getData()
 
 
 
