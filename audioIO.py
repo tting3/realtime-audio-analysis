@@ -72,7 +72,11 @@ class AudioIN():
         data_block = self.dataQueue.get()
         fmt = "%dh" % (len(data_block)/2)
         unpacked_data = struct.unpack(fmt, data_block)
-        return  unpacked_data
+        data_list = []
+        for sample in unpacked_data:
+            data_list.append(float(sample)/NORMALIZE_VALUE)
+        
+        return  data_list
 
     # Call when AudioIn is not needed anymore
     def terminate(self):
@@ -90,7 +94,7 @@ def main():
     print "done stream"
     a.terminate()
 
-    a.getData()
+    print a.getData()
 
 
 
