@@ -14,6 +14,7 @@ import Queue
 import threading
 import time
 import wave
+import pylab as pl
 
 class AudioIN():
     
@@ -87,14 +88,17 @@ def main():
     a = AudioIN()
     a.start_stream()
     
-    for i in range(10):
+    for i in range(100):
         time.sleep(0.1)
 
     a.stop_stream()
     print "done stream"
     a.terminate()
 
-    print a.getData()
+    ab = a.getData()
+    pl.plot(ab)
+    pl.show()
+    #print a.getData()
 
 
 
