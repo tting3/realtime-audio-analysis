@@ -1,20 +1,34 @@
-TODO:
-1. Calibration (first take background, then subtract in frequency domain)
-2. Smoothing ()
-3. HOPSIZE vs Overlap
-4. HOPSIZE = BLOCKSIZE
-5. Separate module into PyAudio, Overlap, plot
-6. Threshold
+[Sep 2 Meeting]
+==============================================================================================
+1. TODO:
 
-Digit recognition
+    - Calibration (first take background, then subtract in frequency domain) [Incomplete]
+    - Smoothing ()                                                           [Incomplete]
+    - HOPSIZE vs Overlap                                                     [Complete]
+    - HOPSIZE = BLOCKSIZE                                                    [Complete]
+    - Separate module into PyAudio, Overlap, plot                            [Complete]
+    - Threshold                                                              [Incomplete]
 
-feature extraction
-- cepstrum
-- energy
+2. Future direction
+   
+   {Digit recognition}
 
-algorithm
-- dynamic time warping
-- hidden markov model
+    *** Feature extraction ***
+    - cepstrum
+    - energy
+
+    *** Learning algorithm ***
+    - dynamic time warping
+    - hidden markov model
+
+----------------------------------------------------------------------------------------------
+==> Completed seperating the modules. Delay time was greatly reduced. However, drawer module
+    still needs cleaning. The drawer module cannot put in the threading module.
+
+==> Fixed confusino about hopsize and blocksize. No need to set HOPSIZE=BLOCKSIZE for new
+    implementation.
+
+*** Needs to check if the data provided is actually correct.
 
 
 
