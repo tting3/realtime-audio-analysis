@@ -19,20 +19,17 @@ ax1 = fig.add_subplot(111)
 maxelem = 20    # Max Data Collected
 
 
-x = []
-y = []
-
 # Define function to be called
 def plottest(i):
     # print(i)
     # Restrict the max length
-    if len(x) >= maxelem:
-        x.pop(0)
-        y.pop(0)
+    #if len(x) >= maxelem:
+    #    x.pop(0)
+    #    y.pop(0)
 
     # Adding new data
-    x.append(i)
-    y.append(rng.randint(0,20)) # Streaming Random Data from 0 - 20
+    x = [k for k in range(4000)]
+    y = [rng.random()*1 for k in range(4000)] # Streaming Random Data from 0 - 20
     # y.append(input[i])  # Streaming Audio data
 
     ax1.clear()
@@ -44,6 +41,9 @@ def plottest(i):
 # Animation, Maybe there exists a better way?
 ani = animate.FuncAnimation(fig,plottest,interval=500)
 plt.show()
+
+plottest(0)
+
 """
 
 import numpy as np
