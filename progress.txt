@@ -1,0 +1,21 @@
+TODO:
+1. Calibration (first take background, then subtract in frequency domain)
+2. Smoothing ()
+3. HOPSIZE vs Overlap
+4. HOPSIZE = BLOCKSIZE
+5. Separate module into PyAudio, Overlap, plot
+6. Threshold
+
+Digit recognition
+
+feature extraction
+- cepstrum
+- energy
+
+algorithm
+- dynamic time warping
+- hidden markov model
+
+
+
+
